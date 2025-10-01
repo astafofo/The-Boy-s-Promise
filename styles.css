@@ -1,0 +1,112 @@
+body {
+    background: #ffcccc;
+    color: #660000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    z-index: 10; /* Keep the text above icons */
+    text-align: center;
+    padding: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+    perspective: 1000px;
+    user-select: none;
+}
+
+.title {
+    font-size: 3em;
+    font-family: 'DynaPuff', cursive;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition-delay: 0.5s;
+    user-select: none;
+}
+
+.title.show {
+    opacity: 1;
+    transform: translateY(0);
+    user-select: none;
+}
+
+.story p {
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 1.7em;
+    font-family: 'DynaPuff', cursive;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    display: block;
+    user-select: none;
+}
+
+.story p.show {
+    opacity: 1;
+    transform: translateY(0);
+    user-select: none;
+}
+
+.story span {
+    display: inline-block;
+    filter: blur(4px); /* Apply blur effect */
+    font-size: 1em;
+    position: relative; /* Prevent position shifts */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    cursor: pointer;
+    user-select: none;
+}
+
+.story span:hover {
+    filter: blur(0); /* Remove blur on hover */
+    transform: scale(1.9); /* Slight scale effect */
+    user-select: none;
+}
+
+.icon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1; /* Ensure icons are behind the text */
+    user-select: none;
+}
+
+.icon {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(255, 102, 102, 0.3); /* Lightened color for icons */
+    transform: rotate(0deg);
+    transition: transform 0.1s linear;
+    mix-blend-mode: multiply;
+    opacity: 0.8; /* Slight transparency */
+    user-select: none;
+}
+
+.credits {
+    font-size: 2em;
+    font-family: 'DynaPuff', cursive;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    z-index: 10; /* Ensures it's above other elements */
+    user-select: none;
+}
+
+.credits.show {
+    opacity: 1;
+    transform: translateY(0);
+    user-select: none;
+}
