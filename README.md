@@ -48,10 +48,6 @@ This project is configured to deploy automatically to GitHub Pages when pushed t
 └── README.md       # This file
 ```
 
-## Author
-
-- Harly
-
 ## License
 
 This project is personal and not licensed for public use.
